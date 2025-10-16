@@ -1,0 +1,21 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Charline's awesome website
+
+![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
+This is an example coming from [p8105](https://p8105.com/index.html).
+
+We're making websites today! learn more about this site [here](about.html).
+I also use [google](https://google.com/) a ton for data science.
+To show the plot, please click here [plots](plots.html).
+Here's a picture of co-worker
+![](images/co.png)
+
+

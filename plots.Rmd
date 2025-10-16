@@ -1,0 +1,38 @@
+---
+title: "Here are some plots"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+We often make plots in data science.
+
+here's tidyverse. 
+```{r message=FALSE}
+library(tidyverse)
+```
+here is a dataframe
+```{r}
+
+plot_df=
+  tibble(
+    x=rnorm(100, 1,2),
+    y=1+2*x+rnorm(100)
+  )
+```
+
+here's a plot
+
+An equation:
+
+$$y_i = \beta_1x_i+\beta_2x_2+\epsilon$$
+```{r}
+
+plot_df |> 
+  ggplot(aes(x=x, y=y))+
+  geom_point()
+```
+
+Go back to the home page [index](index.html)
