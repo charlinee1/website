@@ -6,8 +6,43 @@ output:
 ```{r message=FALSE}
 library(tidyverse)
 library(p8105.datasets)
-
 library(plotly)
 ```
+
+let's load the airbnb dataset
+```{r}
+data("nyc_airbnb")
+
+nyc_airbnb=
+  nyc_airbnb |> 
+  mutate(
+    rating=review_scores_location/2
+  ) |> 
+  select(
+    neighbourhood_group, neighbourhood,rating, 
+    price,room_type,lat,long
+  ) |> 
+  filter(
+    neighbourhood_group=="Manhattan",
+    room_type=="Entire home/apt",
+  price <=500,
+  price >=100
+  )
+
+```
+
+
+let's make a scatterplot . interactive one.
+```{r}
+nyc_airbnb |> 
+  mutate(
+    label=str_c("Price: $", price) )|> 
+  plot_ly(
+    x=~lat,y=~long,
+    type = "scatter", mode="markers",color=~price,
+    text=~label
+  )
+```
+
 
 
